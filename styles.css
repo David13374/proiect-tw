@@ -467,6 +467,51 @@ p {
   border-top: 1px solid #d5d7ce;
 }
 
+.timeline-item--robotics {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.1fr) minmax(0, 1.5fr) 0.2fr;
+}
+
+.timeline-media:empty {
+  display: none;
+}
+
+.timeline-item--robotics .timeline-date {
+  grid-column: 1;
+}
+
+.timeline-item--robotics .timeline-media {
+  grid-column: 2;
+}
+
+.timeline-item--robotics .timeline-detail {
+  grid-column: 3;
+}
+
+.timeline-item--robotics .timeline-index {
+  grid-column: 4;
+}
+
+.timeline-item--robotics .timeline-media:empty + .timeline-detail {
+  grid-column: 2 / 4;
+}
+
+.timeline-media img,
+.timeline-media video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  object-fit: cover;
+}
+
+.timeline-media iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
 .timeline-date,
 .timeline-index,
 .project-meta,
@@ -1319,6 +1364,15 @@ p {
   .timeline-date {
     grid-column: 1 / -1;
     margin-bottom: 5px;
+  }
+
+  .timeline-item--robotics {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item--robotics .timeline-media,
+  .timeline-item--robotics .timeline-detail {
+    grid-column: 1 / -1;
   }
 
   .timeline-index {
